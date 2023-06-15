@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import TodoForm from './TodoForm';
-import Todo from './Todo';
+import TodoForm from "./TodoForm";
+import Todo from "./Todo";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([]);
@@ -9,14 +9,14 @@ export default function TodoList() {
     if (!task.text) {
       return;
     }
-      const newTodos = [task, ...todos];
-      setTodos(newTodos);
+    const newTodos = [task, ...todos];
+    setTodos(newTodos);
   };
-    const removeTask = (id) => {
-      let updatedTasks = [...todos].filter((task) => task.id !== id);
-      setTodos(updatedTasks);
-    };
-  
+  const removeTask = (id) => {
+    let updatedTasks = [...todos].filter((task) => task.id !== id);
+    setTodos(updatedTasks);
+  };
+
   const completeTask = (id) => {
     let updatedTasks = todos.map((todo) => {
       if (todo.id === id) {
